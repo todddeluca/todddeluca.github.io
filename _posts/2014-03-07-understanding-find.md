@@ -1,23 +1,21 @@
 ---
 layout: post
-title:  "Understanding the Mental Model of Find"
-date:   2014-03-07
-categories: technotes
+title:  "Understanding the Find Command"
 ---
-[sc]: http://en.wikipedia.org/wiki/Short-circuit_evaluation "Short-circuit evaluation"
 
+When I first stumbled upon the unix command `find`, I found it indistinguishable from magic.  After meeting it a few more times, I decided to get to know it better.  After skimming the manpages and googling examples and tutorials, I thought I understood how `find` works.  However, after writing   complex and broken commands, I realized my understanding was flawed.  Here I present the wrong and the right way to think about `find`.
 
-## The WRONG Mental Model
+## The Wrong Mental Model
 
-When I first started using find, I had a mistaken mental model of how it
-worked.  This is what I thought a find command was:
+When I first started using `find`, I had a mistaken mental model of how it
+worked.  This is what I thought a `find` command was:
 
     find [path...] [boolean-filter] [action]
 
-I thought find would enumerate every path within the directories I specified
+I thought `find` would enumerate every path within the directories I specified
 and for each path that passed the boolean filter I specified it would do some
 action on the path.  The default action would be to print the path.  In
-pseudocode, I might implement find like this:
+pseudocode, I might implement `find` like this:
 
     def find(paths=['.'], boolean_filter=true, action=print):
         for path in paths:
@@ -26,16 +24,16 @@ pseudocode, I might implement find like this:
             if is_directory(path):
                 find(children(path), boolean_filter, action)
 
-Unfortunately this mistaken model of how find works is propagated on the
-internet, even in find tutorials.  Here is an example that only hints that its
+Unfortunately this mistaken model of how `find` works is propagated on the
+internet, even in `find` tutorials.  Here is an example that only hints that its
 model is broken in a "gotcha" section at the very end:
 
 - http://content.hccfl.edu/pollock/Unix/FindCmd.htm
 
-### A typical mistake
+### A Typical Mistake
 
 This mistaken mental model leads to a lot of confusion when users start to
-write more complex find commands.  Here is a typical example:
+write more complex `find` commands.  Here is a typical example:
 
 - http://www.linuxforums.org/forum/red-hat-fedora-linux/177489-grep-underscore-problem.html
 
@@ -50,9 +48,9 @@ command only executes `grep` on the xml files!
     find . -name "*.php" -o -name "*.pl" -o -name "*.cgi" -o -name "*.pm" -o -name "*.xml" -exec grep -il 'db_name' {} \;
 
 
-## The RIGHT Mental Model
+## The Right Mental Model
 
-This is what a find command really is:
+This is what a `find` command really is:
 
     find [paths...] [expression]
 
@@ -61,13 +59,13 @@ the command.  For each path it evaluates a boolean short-circuit expression
 which has at least one side effect.  That is a mouthful, but we can break it
 down.  Let's look in more detail at what this expression is.
 
-### Atomic boolean expressions
+### Atomic Boolean Expressions
 
 Find has three types of simple boolean expressions:
 
   - Options.  Always return true and have no side effects.  They affect overall
-    operation of find rather than operating on specific paths. An example is
-    `-maxdepth`, which tells find to only descend so many levels deep in the
+    operation of `find` rather than operating on specific paths. An example is
+    `-maxdepth`, which tells `find` to only descend so many levels deep in the
     directory tree as it iterates.
   - Tests.  Have no side effects and return true or false.  Tests operate on
     individual paths.  For example the `-name` expression tests whether the
@@ -78,13 +76,13 @@ Find has three types of simple boolean expressions:
     the current path if it is a file or empty directory and returns true iff
     successful.
 
-Options, tests, and actions form the smallest expressions you can use in a find
+Options, tests, and actions form the smallest expressions you can use in a `find`
 command.  Here are some very simple examples:
 
     find . -print  # evaluating the -print expression has the side effect (i.e. action) of printing the current path to stdout.
     find . -delete # evaluating the -delete expression has the side effect of deleting the current path.
 
-### Compound boolean expressions
+### Compound Boolean Expressions
 
 The atomic boolean expressions can be combined into a compound expression using
 boolean operators and [short-circuit
@@ -128,15 +126,15 @@ evaluation][sc] to apply an action to only some paths:
     find . -not -name '*.py' -print
 
 
-### Expressions with side effects
+### Expressions With Side Effects
 
-A find expression is expected to have some kind of side effect.  Otherwise
+A `find` expression is expected to have some kind of side effect.  Otherwise
 there would be no point in running the command!  (Well, I suppose there could
 be a reason like putting directory and file metadata into the filesystem
 cache.) For expressions that contain no actions with side effects, an implicit
 `-print` action is used.
 
-#### The default print side effect
+#### The Default Print Side Effect
 
 By default, if an expression contains no action (other than `-prune`), then the
 expression is transformed into `( expr ) -and -print`.
@@ -157,12 +155,12 @@ And here are the equivalent command, including implicit operators and -print:
 
 Pay special attention to the parentheses that are wrapped around that final
 command.  The `-print` expression is combined using `-and` with the entire
-expression.  It is this transformation which confuses people with the WRONG
+expression.  It is this transformation which confuses people with the wrong
 mental model.
 
-#### An explicit side effect (or two, or three...)
+#### An Explicit Side Effect (or Two, or Three...)
 
-If a find expression contains an explicit action other than `-prune`, the
+If a `find` expression contains an explicit action other than `-prune`, the
 expression will not have a `-print` action added.  An expression can have one
 or many actions with side effects.  We have already seen some simple
 expressions with explicit actions.
@@ -193,9 +191,9 @@ Here are some commands with multiple actions:
     find . -type d -exec chmod 2775 {} \; -or -type f -name '*.py' -exec chmod 775 {} \; -or -type f -exec chmod 664 {} \;
 
 
-## Righting our Wrongs
+## Righting Our Wrongs
 
-Now that you understand the RIGHT mental model of find, it should be easy to
+Now that you understand the right mental model of `find`, it should be easy to
 understand what the user in our original problem was doing wrong and how to fix
 it.  Here was their working `-print` command:
 
@@ -205,7 +203,7 @@ And here is their faulty `-exec` command:
 
     find . -name "*.php" -o -name "*.pl" -o -name "*.cgi" -o -name "*.pm" -o -name "*.xml" -exec grep -il 'db_name' {} \;
 
-Now that we understand the RIGHT mental model we can write out explicitly the
+Now that we understand the right mental model we can write out explicitly the
 `-print` command:
 
     find . \( -name "*.php" -o -name "*.pl" -o -name "*.cgi" -o -name "*.pm" -o -name "*.xml" \) -print
@@ -216,22 +214,24 @@ command:
     find . \( -name "*.php" -o -name "*.pl" -o -name "*.cgi" -o -name "*.pm" -o -name "*.xml" \) -exec grep -il 'db_name' {} \;
 
 
-Now that you grok how find evaluates its expression, you can write an
+Now that you grok how `find` evaluates its expression, you can write an
 expression to perform multiple actions on a single path or conditionally
 execute different actions on paths.  The sky is the limit.  Go forth and
 `find`!
 
 ## Further reading
 
-- The find man pages: http://unixhelp.ed.ac.uk/CGI/man-cgi?find
+- The `find` man pages: http://unixhelp.ed.ac.uk/CGI/man-cgi?find
 - http://www.softpanorama.org/Tools/Find/find_mini_tutorial.shtml
 - http://www.softpanorama.org/Tools/Find/typical_errors_in_using_find.shtml
-- A find tutorial with many examples, http://www.grymoire.com/Unix/Find.html,
-  some of which use the WRONG mental model (e.g. `find . -print -o -name SCCS
-  -prune`) and some of which use the RIGHT one (e.g. `find . \( -name a.out -o
+- A `find` tutorial with many examples, http://www.grymoire.com/Unix/Find.html,
+  some of which use the wrong mental model (e.g. `find . -print -o -name SCCS
+  -prune`) and some of which use the right one (e.g. `find . \( -name a.out -o
   -name *.o \) -print`).
 
 
+
+[sc]: http://en.wikipedia.org/wiki/Short-circuit_evaluation "Short-circuit evaluation"
 
 
 
