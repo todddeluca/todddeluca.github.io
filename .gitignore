@@ -4,3 +4,5 @@ _site/
 # SublimeText
 *.sublime-project
 *.sublime-workspace
+
+.DS_Store
