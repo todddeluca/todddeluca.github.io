@@ -3,21 +3,6 @@ layout: post
 title:  "DIY Airlock Fermentation Lid"
 ---
 
-[1]: http://www.gardeners.com/Stoneware-Pickling-Crock-1gallon/8587567RS,default,pd.html
-[2]: https://www.youtube.com/watch?v=p1vklK8h3h4
-[3]: http://feedmelikeyoumeanit.blogspot.com/2013/08/fermentation-equipment-part-1-airlocks.html
-[4]: https://www.youtube.com/watch?v=3djrjZqcp8M
-[5]: http://www.pickl-it.com/
-[6]: https://www.etsy.com/listing/67237756/the-pickle-meister-glass-fermentation
-[7]: http://www.amazon.com/Homesteaders-Supply-Pickle-Pro-vegetable-Fermenting/dp/B006JMJJP0/
-[8]: http://www.amazon.com/Primal-Kitchen-Kraut-Kap-Platinum/dp/B009RT4W9U
-[9]: http://www.amazon.com/Ball-Wide-Mouth-Plastic-Storage-8-Count/dp/B000SSN3L2/
-[10]: http://www.amazon.com/gp/product/B0055PU5DC
-[11]: http://www.amazon.com/Piece-Plastic-Airlock-Sold-sets/dp/B000E60G2W/
-[12]: http://www.vermonthomebrew.com/
-[13]: http://www.amazon.com/The-Art-Fermentation-Exploration-Essential/dp/160358286X/
-[14]: http://www.pickl-it.com/blog/636/brine-recommendations/
-
 Last fall, I discovered sauerkraut fermentation as a hobby.  What can I say?  I know a good trend when I see one.  Like any hobby worth its salt, there are toys to buy.  And lots of recommendations.  For my first batch of sauerkraut last year, I started with a beautiful, sensual, weighty [1-gallon stoneware crock][1] from Ohio Stoneware.  I was inspired to use the crock after watching a youtube video, [German Sauerkraut Making - Authentic Method][2].  I followed the video's instructions and make a decent first batch.
 
 For my next round of sauerkraut, I was curious to try a method involving an airlock.  I had heard that airlocks can improve flavor and consistency while avoiding the dreaded white mold.  Here are two sources of information that I liked:
@@ -40,7 +25,17 @@ The assembled lid:
 
 ![My wide-mouth ball jar airlock]({{ site.url }}/images/2014/wide-mouth-ball-jar-airlock-lid.jpg)
 
-
-I'd like to give a shout out to Pickl-It.  I've really appreciated some of the company's blog posts.  In particular the one about [brine recommendations][14].  They give a salt mass to cabbage weight ratio that when translated to purely grams is roughly "1g salt for every 100g cabbage".  The exciting thing about access to this ratio is that I can explore more precisely the effects that different salinities have on the ferment.  Thank you, Pickl-It.
-
-I also want to give a shout out to Sandor Katz.  The parts of his book, [The Art of Fermentation][13], that I have read live up to the extraordinarily compelling forward by Michael Pollan.  
+[1]: http://www.gardeners.com/Stoneware-Pickling-Crock-1gallon/8587567RS,default,pd.html
+[2]: https://www.youtube.com/watch?v=p1vklK8h3h4
+[3]: http://feedmelikeyoumeanit.blogspot.com/2013/08/fermentation-equipment-part-1-airlocks.html
+[4]: https://www.youtube.com/watch?v=3djrjZqcp8M
+[5]: http://www.pickl-it.com/
+[6]: https://www.etsy.com/listing/67237756/the-pickle-meister-glass-fermentation
+[7]: http://www.amazon.com/Homesteaders-Supply-Pickle-Pro-vegetable-Fermenting/dp/B006JMJJP0/
+[8]: http://www.amazon.com/Primal-Kitchen-Kraut-Kap-Platinum/dp/B009RT4W9U
+[9]: http://www.amazon.com/Ball-Wide-Mouth-Plastic-Storage-8-Count/dp/B000SSN3L2/
+[10]: http://www.amazon.com/gp/product/B0055PU5DC
+[11]: http://www.amazon.com/Piece-Plastic-Airlock-Sold-sets/dp/B000E60G2W/
+[12]: http://www.vermonthomebrew.com/
+[13]: http://www.amazon.com/The-Art-Fermentation-Exploration-Essential/dp/160358286X/
+[14]: http://www.pickl-it.com/blog/636/brine-recommendations/
