@@ -15,7 +15,7 @@ These sources recommend the [Pickl-it][5] and [The Pickle Meister][6] fermentati
 - [Pickle-Pro vegetable Fermenting Lid][7].  ~$20 with shipping.
 - [Kraut Kap - Platinum][8].  ~$14 with shipping.
 
-After seeing these, I thought it would be fun, easy, and inexpensive to make my own.  All I needed was a [Ball Plastic Storage Cap][9] ($4 for 8) or a [Tattler Reusable Wide Mouth Canning Lid][10] ($12 for 12), a [3 Piece Plastic Airlock][11] ($6.15 for 3), and a [rubber grommet][15].  I had a ball jar lid lying around.  I drove to [Vermont Homebrew Supply][12] and bought an airlock and gasket (the large size) for less that $2.00.  I drilled a hole in the lid with a 1/2 inch bit (though a 7/16 bit might have been a better fit for the airlock stem) and installed the gasket.  Then I inserted the airlock.  Done.  5 minutes of work.  I think I could easily make 10 of these in 20 minutes if I got my rhythm.
+After seeing these, I thought it would be fun, easy, and inexpensive to make my own.  All I needed was a [Ball Plastic Storage Cap][9] ($4 for 8) or a [Tattler Reusable Wide Mouth Canning Lid][10] ($12 for 12), a [3 Piece Plastic Airlock][11] ($6.15 for 3), and a [rubber grommet][15].  I had a ball jar lid lying around.  I drove to [Vermont Homebrew Supply][12] and bought an airlock and grommet (the small size) for less that $2.00.  I slowly and carefully drilled a hole in the lid with a 7/16 inch split point (not a pilot point) drill bit.  Then I installed the grommet in the hole.  Then I inserted the airlock into the grommet.  Done.  5 minutes of work.
 
 The unassembled parts:
 
