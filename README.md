@@ -1,4 +1,6 @@
-todddeluca.github.io
-====================
+# todddeluca.github.io
 
-Todd's personal blog.
+My personal website.
+
+
+

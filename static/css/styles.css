@@ -1,0 +1,115 @@
+
+
+div.main {
+background-color: #fff;
+}
+
+
+.footer {
+text-align: center;
+background:#ddd;
+}
+
+
+.banner img{
+display:block;
+}
+
+
+.content {
+}
+
+
+img.top_left {
+float: left;
+margin: 0px 10px 10px 0px;
+}
+
+
+/* 
+MENU NAVIGATION: http://css.maxdesign.com.au/listamatic/horizontal19.htm 
+*/
+
+/*
+div.nav {
+background: #aaa;
+}
+.nav div {
+margin-left: 20px;
+display: inline;
+}
+.nav a {
+text-transform: uppercase;
+color: #222;
+}
+.nav a.thisPage {
+text-decoration: none;
+font-weight: bold;
+color: #ddd;
+}
+div.nav {
+margin: 0 auto;
+width: 1140px;
+}
+.nav div {
+display: inline;
+}
+*/
+
+div.nav {
+background: #aaa;
+}
+.nav a {
+text-transform: uppercase;
+color: #222;
+/*
+font-size: 0.8em;
+font-family: sans-serif;
+padding-top: 5px;
+padding-bottom: 5px;
+text-decoration: none;
+*/
+}
+.nav a:hover {
+color: #ccc;
+}
+.nav a.thisPage {
+text-decoration: none;
+font-weight: bold;
+color: #ddd;
+}
+.nav ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+.nav li {
+margin-left: 20px;
+display: inline;
+}
+
+
+
+div.section {
+margin-top: 10px;
+padding: 10px;
+background:#ddd;
+}
+/*
+border:1px solid black;
+*/
+
+.section .header {
+text-transform: uppercase;
+}
+/*
+padding: 10px;
+font-size: 1.2em;
+background: #ccc;
+border-bottom:1px solid black;
+*/
+
+.section .body {
+padding: 5px;
+}
+

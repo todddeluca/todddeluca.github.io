@@ -7,38 +7,53 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+        <!-- <link rel="stylesheet" href="/css/syntax.css"> -->
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+        <!-- <link rel="stylesheet" href="/css/main.css"> -->
+
+
+        <link rel="icon" href="/static/images/favicon.jpg" type="image/jpeg" />
+        <link rel="stylesheet" href="/static/css/styles.css" type="text/css" />
+        <!-- 24 column grid layout with blueprint -->
+        <link rel="stylesheet" href="/static/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+        <link rel="stylesheet" href="/static/css/blueprint/print.css" type="text/css" media="print" />
+        <!--[if lt IE 8]><link rel="stylesheet" href="/css/blueprint/ie.css" type="text/css" media="screen, projection" /><![endif]-->
 
     </head>
+
     <body>
+        <div class="container main">
 
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </div>
+        <!-- header -->
+        <div class="header">
+        <div class="span-24 banner">
+        <img src="/static/images/cochetopa_banner_950.jpg" alt="banner" title="Cochetopa Hills, Colorado, USA"/>
+        </div> <!-- end banner -->
+        <div class="span-24 nav"> 
+        <ul>
+        <li><a href="/">Home</a></li> 
+        <li><a href="http://blog.todddeluca.com">Blog</a></li> 
+        <li><a href="#contact">Contact</a></li> 
+        </ul>
+        </div> <!-- end menu nav -->
+        </div><!-- end header -->
 
-          {{ content }}
+        <!-- content -->
+        <div class="span-24 content">
+        {% comment %}
+        <p class="maintenance">This website is currently undergoing routine maintenance.  Thank you for your patience while the site is unavailable.</p>
+        {% endcomment %}
+        {{ content }}
+        </div> 
+        <!-- end content -->
 
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Your Name<br />
-                What You Are<br />
-                you@example.com
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
-                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
-              </p>
-            </div>
-          </div>
-        </div>
+        <!-- footer -->
+        <div class="span-24 footer">
+        &#169; 2008 - {{ site.time | date: '%Y' }}
+        </div><!-- end footer -->
+         
+        </div> <!-- end main -->
 
-    </body>
-</html>
+    </body> 
+</html> 
