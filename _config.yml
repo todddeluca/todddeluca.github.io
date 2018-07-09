@@ -27,7 +27,8 @@ github_username:  jekyll
 
 # Build settings
 markdown: redcarpet
-highlighter: pygments
+highlighter: rouge
+# highlighter: pygments
 # markdown: kramdown
 # theme: minima
 # plugins:
